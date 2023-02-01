@@ -19,7 +19,11 @@ namespace Expense_Tracker
         public void SqlCommand(string querry, SqlConnection con)
         {
             SqlCommand querryCommand = new SqlCommand(querry, con);
-
+            //parameterized query
+            querryCommand.Parameters.Add("@type", SqlDbType.VarChar).Value = type_comboBox.Text;
+            querryCommand.Parameters.Add("@date", SqlDbType.VarChar).Value = date_txt.Text;
+            querryCommand.Parameters.Add("@name", SqlDbType.VarChar).Value = name_txt.Text;
+            querryCommand.Parameters.Add("@amount", SqlDbType.Decimal).Value = decimal.Parse(amount_txt.Text);
             //adding elements
             querryCommand.ExecuteNonQuery();
 
@@ -49,10 +53,11 @@ namespace Expense_Tracker
             con.Open();
 
             //make the insert query
-            string insert = $"INSERT INTO Information(Type, Name, Date, Amount) VALUES ({type_comboBox.Text}, {date_txt.Text}, {name_txt.Text}, {decimal.Parse(amount_txt.Text)})";
-            
+            //string insert = $"INSERT INTO Information(Type, Name, Date, Amount) VALUES ({type_comboBox.Text}, {date_txt.Text}, {name_txt.Text}, {decimal.Parse(amount_txt.Text)})";
+
             //insert
-            SqlCommand(insert,con);
+            //parameterized query
+            SqlCommand("INSERT INTO Information(Type, Name, Date, Amount) VALUES (@type, @date, @name, @amount)", con);
 
             //closing the connection
             con.Close();
