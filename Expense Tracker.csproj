@@ -6,6 +6,7 @@
     <RootNamespace>Expense_Tracker</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
     <StartupObject></StartupObject>
+    <ApplicationIcon>image-removebg-preview (2).ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
