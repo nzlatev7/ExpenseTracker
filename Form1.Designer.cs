@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -149,8 +150,9 @@
             this.type_comboBox.AccessibleDescription = "";
             this.type_comboBox.FormattingEnabled = true;
             this.type_comboBox.Items.AddRange(new object[] {
-            "feffef",
-            "fefef"});
+            "Cash",
+            "Credit Card",
+            "Debit Card"});
             this.type_comboBox.Location = new System.Drawing.Point(132, 163);
             this.type_comboBox.Name = "type_comboBox";
             this.type_comboBox.Size = new System.Drawing.Size(179, 23);
@@ -229,9 +231,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
-            //this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "Expense Tracker";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
